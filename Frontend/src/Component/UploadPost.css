@@ -1,0 +1,72 @@
+#upload-post{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    /* background-color: black; */
+}
+
+#up-form{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgb(129, 128, 128);
+    width: 26%;
+    background-color: whitesmoke;
+}
+
+#up-form>textarea{
+    resize: none;
+    height: 100px;
+    width: 100%;
+
+}
+#up-form>input{
+    display: none;
+}
+#up-form>img{
+width: 100%;
+aspect-ratio: 1;
+}
+#up-form>textarea::-webkit-scrollbar{
+display: none;
+}
+#upload-btn{
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* @media only screen and (max-width: 1000px){
+    #up-form{
+        width: 52%;
+    }
+
+} */
+@media only screen and (max-width: 1000px){
+    #up-form{
+        width: 30%;
+    }
+
+}
+@media only screen and (max-width: 850px){
+    #up-form{
+        width: 50%;
+    }
+    html{
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 450px){
+    #up-form{
+        width: 75%;
+    }
+    html{
+        font-size: 12px;
+    }
+}
