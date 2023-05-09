@@ -28,7 +28,7 @@ app.use(cors({origin:["http://localhost:3000"],credentials:true}));
 app.use(cookieParser());
 startDatabase();
 
-app.use(express.static(path.join(__dirname,'./Frontend/build')));
+app.use(express.static(path.join(__dirname,'./build')));
 
 
 app.get("/node",(req,res)=>{
@@ -41,7 +41,7 @@ app.use("/api/v1/user",require("./routes/User"))
 
 
 app.get("/*", function (req, res) {
-  res.sendFile(path.join(__dirname, "./Frontend/build/index.html"), function (err) {
+  res.sendFile(path.join(__dirname, "./build/index.html"), function (err) {
     if (err) {
       res.status(500).send(err);
     }
