@@ -48,4 +48,4 @@ app.get("/*", function (req, res) {
   });
 });
 
-app.listen(PORT,()=>{console.log(`server is running on ${PORT}`);})
+app.listen(PORT)
