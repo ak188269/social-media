@@ -4,7 +4,6 @@ const dotenv=require("dotenv");
 const jwt=require('jsonwebtoken');
 const bodyParser=require("body-parser");
 const cookieParser=require("cookie-parser");
-const startDatabase=require("./database/db");
 const cloudinary=require("cloudinary").v2;
 const path=require("path");
 dotenv.config({path:"./config.env"});
@@ -14,6 +13,7 @@ cloudinary.config({
   api_secret: process.env.CLOUD_API_SECRET_KEY
 });
 
+const startDatabase=require("./database/db");
 const PORT=process.env.PORT || 8000;
 
 app.use(bodyParser.json({limit:"10mb"}));
