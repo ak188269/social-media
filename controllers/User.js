@@ -15,7 +15,7 @@ const register = async (req, res) => {
         const { name, email, password } = req.body;
         let user = await User.findOne({ email });
         if (user)
-            return res.status(400).json({ success: false, msg: "User already exist" });
+            return res.json({ success: false, msg: "User already exist" });
         user = await User.create({
             name, email, password, avatar: { public_id: "sample id", url: "sample url" }
         })
@@ -26,6 +26,7 @@ const register = async (req, res) => {
             }
         };
         const token = jwt.sign(payload, secretKey);
+        user=await User.findById(id);
         res.cookie("jwt", token, { maxAge: expiryTime, httpOnly: true });
         res.status(200).json({ success: true, msg: "Account created successfully ✔" ,user:user});
     }
@@ -83,12 +84,12 @@ const changePassword=async(req,res)=>{
    try{ 
     const {oldPassword,newPassword}=req.body;
     if(!oldPassword || !newPassword){
-        return res.status(400).json({ success:false,msg: "Please provide valid password" });
+        return res.json({ success:false,msg: "Please provide valid password" });
     }
     const user= await User.findById(req.user.id).select("password");
     const isMatch=user.matchPassword(oldPassword);
     if(!isMatch){
-        return res.status(400).json({ success:false,msg: "Incorrect Old password" });
+        return res.json({ success:false,msg: "Incorrect Old password" });
     }
     user.password=newPassword;
     await user.save();
@@ -133,7 +134,7 @@ const forgotPassword=async(req,res)=>{
         const {email,newPassword}=req.body;
         const user= await User.findOne({email}).select("password");
         if(!user){
-            return res.status(400).json({ success:false,msg: "Email not found" });
+            return res.json({ success:false,msg: "Email not found" });
 
         }
         user.password=newPassword;
@@ -150,7 +151,7 @@ const followUser = async (req, res) => {
         const userToFollow = await User.findById(req.params.id);
         const loggedInUser = await User.findById(req.user.id);
         if (!userToFollow) {
-            return res.status(404).json({ success: false, msg: "No user found" });
+            return res.json({ success: false, msg: "No user found" });
         }
 
         // if user is alredy followed then unfollow it 
@@ -189,7 +190,7 @@ const deleteProfile=async (req,res)=>{
    try{ 
     const userProfile=await User.findById(req.user.id);
     if(!userProfile){
-        return res.status(400).json({success:false,msg:"User not found"})
+        return res.json({success:false,msg:"User not found"})
     }
     const userPosts=userProfile.posts;
     // const userFollowing=userProfile.following;
@@ -251,9 +252,9 @@ const deleteUserProfilePic = async(req, res) => {
     try{
         const userProfile=await User.findById(req.user.id);
         if(!userProfile){
-            return res.status(400).json({success:false,msg:"User not found"})
+            return res.json({success:false,msg:"User not found"})
         }
-
+        
         await cloudinary.uploader.destroy(userProfile.avatar.public_id);
         userProfile.avatar={
             public_id: null,

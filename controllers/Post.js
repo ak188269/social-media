@@ -107,7 +107,7 @@ try{
 
     }
     if(post.owner.toString()!==req.user.id.toString()){
-        return res.status(400).json({success:false, msg :"You don`t have access"});
+        return res.json({success:false, msg :"You don`t have access"});
 
     }
 const {caption}=req.body;
