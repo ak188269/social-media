@@ -5,6 +5,8 @@ const jwt = require('jsonwebtoken');
 const User = require("../model/User");
 const Post=require("../model/Post");
 const cloudinary=require("cloudinary").v2;
+const querystring = require('querystring');
+
 // dot.config({ path: "./config.env" });
 const secretKey = process.env.JWT_SECRET_KEY;
 const expiryTime = 30 * 24 * 60 * 60 * 1000;
@@ -63,7 +65,8 @@ const login = async (req, res) => {
         };
         const token = jwt.sign(payload, secretKey);
         res.cookie("jwt", token, { maxAge: expiryTime, httpOnly: true });
-        res.status(200).json({ success: true, msg: "Logged In successfully ✔",user:{_id:id,name:user.name}});
+        user=await User.findById(user._id);
+        res.status(200).json({ success: true, msg: "Logged In successfully ✔",user});
     }
 }
 catch(err){
@@ -305,4 +308,16 @@ return res.status(200).json({success:true,msg:"fetched successfully",data:users}
     return res.json({ success: false, msg: err.message });
 }
 }
-module.exports = { login, register, logout, followUser,changePassword,updateProfile,deleteProfile,myProfile ,getProfile,getAllUsers,forgotPassword,deleteUserProfilePic};
+
+// ------- get people with name like "name"-----
+
+const getPeople=async (req, res)=>{
+try{
+    let people=await User.find({"name":{$regex:`${req?.query?.name}`,$options:"i"}});
+res.json({success: true,people});
+}
+catch (err) {
+res.json({success: false,msg: err.message});
+}
+}
+module.exports = { login, register, logout, followUser,changePassword,updateProfile,deleteProfile,myProfile ,getProfile,getAllUsers,forgotPassword,deleteUserProfilePic,getPeople};

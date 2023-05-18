@@ -1,5 +1,5 @@
 const router=require("express").Router();
-const {login,register,logout, followUser, unfollowUser, updateProfile, changePassword, deleteProfile, myProfile, getProfile, getAllUsers, forgotPassword, deleteUserProfilePic}=require("../controllers/User");
+const {login,register,logout, followUser, unfollowUser, updateProfile, changePassword, deleteProfile, myProfile, getProfile, getAllUsers, forgotPassword, deleteUserProfilePic, getPeople}=require("../controllers/User");
 const auth = require("../middleware/Auth");
 router.post("/register",register)
 router.route("/login").post(login).get(auth,(req,res)=>{
@@ -15,4 +15,5 @@ router.get("/delete/profile",auth,deleteProfile);
 router.get("/profile/:id",getProfile);
 router.get("/alluser",getAllUsers);
 router.post("/forgotPassword",forgotPassword)
+router.get("/",getPeople);
 module.exports=router
