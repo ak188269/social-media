@@ -5,6 +5,7 @@ const jwt=require('jsonwebtoken');
 const bodyParser=require("body-parser");
 const cookieParser=require("cookie-parser");
 const cloudinary=require("cloudinary").v2;
+const socket=require("./controllers/Chat");
 const path=require("path");
 dotenv.config({path:"./config.env"});
 cloudinary.config({
@@ -28,7 +29,7 @@ app.use(cors({origin:["http://localhost:3000"],credentials:true}));
 app.use(cookieParser());
 startDatabase();
 
-app.use(express.static(path.join(__dirname,'./build')));
+app.use(express.static(path.join(__dirname,'../../Frontend/build')));
 
 
 app.get("/node",(req,res)=>{
@@ -41,11 +42,12 @@ app.use("/api/v1/user",require("./routes/User"))
 
 
 app.get("/*", function (req, res) {
-  res.sendFile(path.join(__dirname, "./build/index.html"), function (err) {
+  res.sendFile(path.join(__dirname, "../../Frontend/build/index.html"), function (err) {
     if (err) {
       res.status(500).send(err);
     }
   });
 });
 
-app.listen(PORT)
+const server=app.listen(PORT);
+socket(server);
