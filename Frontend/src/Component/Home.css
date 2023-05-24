@@ -1,0 +1,97 @@
+:root{
+    --bgColor:black;
+    --textColor:white;
+}
+
+
+/* --------------hero section ----------- */
+#hero-section{
+    background-color: var(--bgColor);
+    height: 93vh;
+    color: var(--textColor);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  /* background: linear-gradient(180deg,rgb(231, 222, 222),#ec9595);
+  background: linear-gradient(10deg,rgb(231, 222, 222),#922de9); */
+  /* background: linear-gradient(360deg,black,white); */
+}
+#hero-section>main{
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    /* height: 100%; */
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    /* margin-bottom: 5%; */
+    /* border: 2px solid black; */
+    width: 100%;
+}
+#hero-section>main>div{
+    font-size:2.5rem;
+    /* color: re; */
+   
+}
+.hs-items{
+/* border: 2px solid red; */
+    min-width: 330px;
+    margin: 10px;
+}
+#hero-section-text{
+    /* border: 2px solid white; */
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+    text-align: center;
+    height: fit-content;
+}
+.chat-gif{
+    width: 35%;
+    height: fit-content;
+
+       
+      
+    /* border: 2px solid red; */
+}
+
+.hs-items >img{
+    width: 100%;
+}
+#hero-section>button{
+    padding: 15px 25px;
+    text-align: center;
+    margin: 0px auto;
+}
+.text-items{
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    /* color: black; */
+/* font-weight: bolder; */
+}
+#my-button{
+    width: 100%;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.4rem;
+    cursor: pointer;
+    margin:15px 0;
+    padding: 0;
+    font-size: 1rem;
+
+}
+/* -----media query ---------------- */
+@media  only screen and (max-width:600px){
+    html{
+        font-size: 11px;
+    }
+}
+@media  only screen and (max-width:1100px){
+    html{
+        font-size: 14px;
+    }
+}

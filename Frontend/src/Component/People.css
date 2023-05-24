@@ -1,0 +1,24 @@
+#people{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+@media screen and (max-width: 900px) {
+    #people{
+        width: 70%;
+    }
+}
+@media screen and (max-width: 530px) {
+    #people{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 430px) {
+    #people{
+        width: 100%;
+    }
+}

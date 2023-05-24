@@ -1,0 +1,137 @@
+:root{
+    --bgColor:black;
+    --textColor:white;
+}
+
+
+/* -----------header and navbar-------- */
+#myheader{
+    display: grid;
+    grid-template-columns:2fr 4fr 2.5fr ;
+   
+    background-color: var(--bgColor);
+    padding: 1rem;
+    align-items: center;
+justify-content: center;
+    position: sticky;
+    z-index: 1;
+    top: 0px;
+}
+.nav-icons{
+    /* color: #922de9; */
+    color: white;
+    cursor: pointer;
+}
+#notification-badge{
+    position:absolute;
+top:-5px;
+   left:10px;
+    background-color: red;
+    font-size: 8px;
+    border-radius: 50%;
+    padding: 2px;
+
+}
+.items{
+    color: var(--textColor);
+}
+.login-area{
+    display: flex;
+    justify-content: center;
+}
+#logo{
+    cursor: pointer;
+    height: 30px;
+    width: 5rem;
+    transform: translateX(55%);
+    /* border: 2px solid red; */
+}
+#logo>img{
+    width: 100%;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    /* border: 2px solid blue; */
+}
+nav>a{
+    text-decoration: none;
+    color: white;
+    border-width: 0px;
+}
+#profile-of-user{
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+}
+#navbar-third-section{
+    /* border: 2px solid red; */
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+margin-bottom: 2px;
+}
+
+#profile-of-user > select{
+    outline: none;
+    /* display: none; */
+    width: 20px;
+}
+#dropdown{
+display: flex;
+flex-direction: column;
+position: absolute;
+top: 4rem;
+right: 0px;
+background-color: black;
+padding: 15px;
+gap: 10px;
+width: 130px;
+align-items: center;
+/* border: 2px solid red ; */
+}
+
+
+#new-post{
+    /* text-align: right; */
+    display: flex;
+    justify-content: center;
+}
+.new-post-btn{
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 0.1rem;
+    cursor: pointer;
+    margin: 0px 5px;
+    margin-bottom: 5px;
+    display: flex;
+    /* align-items: center; */
+}
+
+
+.active{
+
+    border-bottom: 2px solid white;
+
+}
+
+@media screen and (max-width:600px) {
+#myheader{
+    grid-template-columns:1fr 3.5fr 2fr;
+}   
+#logo{
+    transform: translateX(0%);
+    width: 3.5rem;
+    height: 20px;
+}
+#navId{
+    transform: translateX(20px);
+}
+#navbar-third-section{
+    gap:1.8rem;
+}
+}

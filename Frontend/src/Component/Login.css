@@ -1,0 +1,107 @@
+#user{
+    height: 92vh;
+    background-color: var(--bgColor);
+    color: var(--textColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+#login-system{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    background-color:black;
+    height: 93vh;
+}
+
+#side-image>img{
+    width: 100%;
+}
+
+#user-login{
+    padding: 2rem 2rem;
+    width: 55%;
+    border-radius: 5%;
+    animation: rotateMe 1.5s ;
+    padding-bottom: 1rem;
+    transition: transform 1s;
+    box-shadow: 0px 0px 12px white;
+}
+
+@keyframes rotateMe {
+    0%{
+        transform: rotate(180deg);
+    }
+    80%{
+        transform: rotate(400deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+#user-login>h5{
+    margin: 10px;
+    margin-left: 0px;
+}
+#login-heading{
+    font-weight: bolder;
+    font-size: 1.5rem;
+    margin-top: 5px;
+}
+.user-logo>img{
+    border-radius: 50%;
+    width: 100%;
+    /* width: 200px; */
+}
+#user-login>input{
+    padding: 8px;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: black;
+}
+.main-items{
+    width: 6rem;
+    margin: 0px auto;
+}
+#form-btn{
+   width: 100%;
+   background-color: red;
+   color: white;
+   border: none;
+   border-radius: 6px;
+   padding: 0.4rem;
+   cursor: pointer;
+   margin:15px 0;
+}
+@media screen and (max-width:1000px) {
+    #user-login{
+        width:65%;
+        padding:1rem;
+    }
+}
+@media only screen and (max-width:800px){
+    #side-image{
+        display: none;
+    }
+    #login-system{
+        grid-template-columns: 100%;
+    }
+    #user-login{
+        width:45%;
+    }
+}
+@media screen and (max-width:500px) {
+    #user-login{
+        width:60%;
+    }
+}
+@media screen and (max-width:450px) {
+    #user-login{
+        width:75%;
+        min-height: 55vh;
+    }
+}
