@@ -48,5 +48,7 @@ app.get("/*", function (req, res) {
   });
 });
 
-const server=app.listen(PORT);
+const server=app.listen(PORT,()=>{
+  console.log('Server listening on port '+PORT);
+});
 socket(server);

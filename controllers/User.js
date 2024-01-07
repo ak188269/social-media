@@ -19,7 +19,10 @@ const register = async (req, res) => {
         if (user)
             return res.json({ success: false, msg: "User already exist" });
         user = await User.create({
-            name, email, password, avatar: { public_id: "sample id", url: "sample url" }
+            name, email, password, avatar: { public_id: "sample id", url: "sample url" } ,
+            // this will add virat , ranbir and mr modi profile in everyone who creates account this will be bring some post when user logins for the first time
+
+            following : ["659a88981ddc2e8b7ac3f672","659a8c721653f0766e13a3e8","659a8ad81ddc2e8b7ac3f67e"]
         })
         const id = user._id;
         const payload = {

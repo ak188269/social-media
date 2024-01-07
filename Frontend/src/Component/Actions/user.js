@@ -251,7 +251,7 @@ export const followUser=(id)=>async(dispatch)=>{
 export const searchUser=(name) =>async(dispatch)=>{
     try
     {dispatch({type:"SEARCH_REQUEST"});
-    const api=`${baseUrl}/api/v1/user?name=${name}`;
+    const api=`${baseUrl}/api/v1/user/search?name=${name}`;
     const config={
         withCredentials:true,
         headers: {

@@ -15,5 +15,5 @@ router.get("/delete/profile",auth,deleteProfile);
 router.get("/profile/:id",getProfile);
 router.get("/alluser",getAllUsers);
 router.post("/forgotPassword",forgotPassword)
-router.get("/",getPeople);
-module.exports=router
+router.get("/search/",getPeople);
+module.exports=router;
