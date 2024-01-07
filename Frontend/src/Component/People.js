@@ -33,7 +33,7 @@ useEffect(()=>{
 <div id="people">
 
 <InputGroup    paddingY={"10px"}>
-    <InputLeftElement pointerEvents='none' padding={"25px 0px"}>
+    <InputLeftElement pointerEvents='none' style={{paddingTop:"20px"}}>
       <SearchIcon />
     </InputLeftElement>
     <Input  value={value}
