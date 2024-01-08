@@ -12,7 +12,7 @@ const auth = async (req, res, next) => {
         let isVerified = await jwt.verify(token, process.env.JWT_SECRET_KEY);
         // console.log("isverified", isVerified);
         req.isVerified = !!isVerified;
-        req.user= await User.findOne({_id:isVerified.userInfo.id});
+        req.user= await User.findOne({_id:isVerified.userInfo.id}).populate("following");
         // console.log("user id auth",req.user);
 
         return next();

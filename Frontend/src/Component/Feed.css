@@ -4,3 +4,40 @@
     align-items: center;
 flex-direction: column;
 }
+.feed-container{
+    display: grid;
+    grid-template-columns: 22% 48% 28%;
+    gap: 10px;
+    width: 100%;
+    background-color: #F0F2F5;
+    
+}
+.feed-container > div{
+    /* border: 2px solid red; */
+}
+#feed-left-section , #feed-right-section{
+    position: sticky;
+    top: 70px;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+    padding-left: 30px;
+    height: calc(99vh - 70px);
+    /* border-right: 2px solid rgb(211, 212, 214); */
+    /* background-color: #F0F2F5;/ */
+}
+#feed-left-section > div {
+    font-weight: 500;
+}
+#feed-left-section > div:hover {
+color: rgb(39, 109, 222);
+/* text-decoration: underline; */
+}
+
+#feed-right-section{
+    border-right: none;
+    /* position: relative; */
+    /* border-left: 2px solid rgb(211, 212, 214); */
+}
