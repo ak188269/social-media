@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { logout } from './Actions/user';
 import { Avatar ,Button} from '@chakra-ui/react';
 
+import LogoutIcon from '@mui/icons-material/Logout';
 import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import PersonSearchIcon from '@mui/icons-material/PersonSearch';
@@ -75,9 +76,13 @@ navId="noId";
         
 
          </div>
-         <NavLink to={"/login"}   className='link' title={user? "Logout":"Login"}>{user ?  <PowerSettingsNewIcon onClick={handleLogOut} className='nav-icons'/> :<LoginIcon className='nav-icons'/>}</NavLink>
+         <NavLink to={"/login"}   className='link' title={user? "Logout":"Login"}>
+          
+          {/* {user ?  <PowerSettingsNewIcon onClick={handleLogOut} className='nav-icons'/> :<LoginIcon className='nav-icons'/>} */}
+     <LogoutIcon onClick={handleLogOut} className='nav-icons'/>
+         </NavLink>
        
-
+        
 
         </div>)}
       </header>

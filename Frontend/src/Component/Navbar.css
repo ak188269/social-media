@@ -118,6 +118,12 @@ align-items: center;
     border-bottom: 2px solid white;
 
 }
+@media screen and (min-width: 1280px) {
+    #myheader{
+        width: 1263px;
+        margin: 0 auto;
+    }
+}
 
 @media screen and (max-width:600px) {
 #myheader{

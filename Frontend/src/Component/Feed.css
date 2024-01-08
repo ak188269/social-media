@@ -6,7 +6,7 @@ flex-direction: column;
 }
 .feed-container{
     display: grid;
-    grid-template-columns: 22% 48% 28%;
+    grid-template-columns: 21% 50% 27%;
     gap: 10px;
     width: 100%;
     background-color: #F0F2F5;
@@ -40,4 +40,25 @@ color: rgb(39, 109, 222);
     border-right: none;
     /* position: relative; */
     /* border-left: 2px solid rgb(211, 212, 214); */
+}
+
+@media screen and (min-width: 1280px) {
+    .feed-container{
+        width: 1260px;
+  
+    }
+}
+@media screen and (max-width: 900px) {
+    .feed-container{
+        grid-template-columns: 22% 50% 26%;
+    }
+}
+@media screen and (max-width: 766px) {
+    .feed-container{
+        grid-template-columns: 100%;
+        gap: 10px;
+    }
+    #feed-left-section , #feed-right-section{
+        display: none;
+    }
 }
