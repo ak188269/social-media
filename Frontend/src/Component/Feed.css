@@ -42,9 +42,9 @@ color: rgb(39, 109, 222);
     /* border-left: 2px solid rgb(211, 212, 214); */
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1500px) {
     .feed-container{
-        width: 1260px;
+        width: 1500px;
   
     }
 }
